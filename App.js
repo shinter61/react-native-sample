@@ -44,6 +44,7 @@ const App: () => React$Node = () => {
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
+                <Text style={styles.customText}>hello, shinter61 world.</Text>
               </Text>
             </View>
             <View style={styles.sectionContainer}>
@@ -108,6 +109,9 @@ const styles = StyleSheet.create({
     padding: 4,
     paddingRight: 12,
     textAlign: 'right',
+  },
+  customText: {
+    fontWeight: '600',
   },
 });
 
