@@ -11,6 +11,7 @@ import { View, Text, Button, TextInput } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import MarkdownEditor from './MarkdownEditor';
 
 function HomeScreen({ route, navigation }) {
   React.useEffect(() => {
@@ -39,6 +40,10 @@ function HomeScreen({ route, navigation }) {
         onPress={() => navigation.navigate('CreatePost')}
       />
       <Text style={{ margin: 10 }}>Post: {route.params?.post}</Text>
+      <Button
+        title="Edit Markdown"
+        onPress={() => navigation.navigate('MarkdownEditor')}
+      />
     </View>
   );
 }
@@ -112,6 +117,11 @@ const App: () => React$Node = () => {
             name="CreatePost"
             component={CreatePostScreen}
             options={{ title: 'Create!!' }}
+          />
+          <Stack.Screen
+            name="MarkdownEditor"
+            component={MarkdownEditor}
+            options={{ title: 'Markdown' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
